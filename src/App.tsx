@@ -10,6 +10,12 @@ function App(): JSX.Element {
   // JavaScript/TypeScript code can be inserted here!
   const [cats, setCats] = useState<Array<Cat>>([
     {
+      name: "Captain Catface",
+      species: "Sea Cattain",
+      favFoods: ["fish, rum"],
+      birthYear: 2016,
+    },
+    {
       name: "Little Miss Purrfect",
       species: "Cat",
       favFoods: ["wet food", "dry food"],
@@ -82,12 +88,12 @@ function App(): JSX.Element {
       birthYear: 2021,
     },
   ]);
-  console.log("Our pretties 😻:", cats);
+  const catCount = cats.length;
 
   return (
     <>
       <Navbar />
-      <Header />
+      <Header catCount={catCount} />
 
       <main>
         <div className="cards__wrapper">
